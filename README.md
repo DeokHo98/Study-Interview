@@ -104,27 +104,27 @@ URLSession은 HTTP를 포함한 몇가지 프로토콜을 지원하고 인증,�
 
 1. NSLayoutConstraint
 
-```swift
+
 NSLayoutConstraint(item: myView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0).isActive = true
  
 NSLayoutConstraint(item: myView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0).isActive = true
  
 NSLayoutConstraint(item: myView, attribute: .height, relatedBy: .equal, toItem: myView, attribute:.width, multiplier: 2.0, constant:0.0).isActive = true
-```
+
 
 이 방법은 레이아웃에 영향을 주지 않더라도 각 매게 변수에 대한 값을 지정해야합니다.
 
 1. ****Anchors****
 
-```swift
+
 myView.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-```
+
 
 이 방법이 권장됨.
 
 ****3. Visual Format Language****
 
-```swift
+
 let views: [String : Any] = ["a": aView,
                                      "b": bView]
         let format1 = "H:|-[a]-|"
@@ -149,7 +149,7 @@ let views: [String : Any] = ["a": aView,
                                                      metrics: nil,
                                                      views: views)
         view.addConstraints(constraint)
-```
+
 
 NSLayoutConstraint 방법보단 알기 쉬워졌지만 문법이 어려워 잘 사용하지않음
 
@@ -250,3 +250,4 @@ ios 프레임워크의 대부분은 클래스로 구성되어있습니다(uiview
 
 
 
+```
