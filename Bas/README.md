@@ -10,41 +10,28 @@
 ## 실제 디바이스가 없을 경우 개발 환경에서 할 수 있는 것과 없는 것을 설명하시오.
 <br>
 
-    [이미지](
+![이미지](https://user-images.githubusercontent.com/67938946/154877256-6b20ca74-dda6-4d74-87be-07e6c1af6eef.png)
 
+- [공식문서](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator/TestingontheiOSSimulator.html)
 <br>
 
-## Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
+## 앱의 콘텐츠나 데이터 자체를 저장/보관하는 특별한 객체를 무엇이라고 하는가?
+<br>
+    
+    Core Data
+
+- [블로그](https://zeddios.tistory.com/987)
 <br>
 
-    기본적인 데이터 타입부터 컬렉션, 각종 구조체나 타이머, 네트워크 등 애플리케이션의 기본적인 기능을 담당하는 프레임워크.
-
-- [블로그](https://babbab2.tistory.com/51)
-- [공식문서](https://developer.apple.com/documentation/foundation)
-
-<br>
+## 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?
 <br>
 
-## Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
+    UIViewController
+
+- [공식문서](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1)
 <br>
 
-    한 객체가 다른 객체의 업무를 대신하거나 객체에게 데이터를 전송하는 방법. 이 때 프로토콜을 이용해서 구현하게 됩니다. 델리게이트는 클래스에서 채택하려면 Anyobject를 채택한 프로토콜을 사용해야 하기 때문에 참조타입으로 바뀝니다.
-
-- [블로그](https://fomaios.tistory.com/entry/iOS-%EB%A9%B4%EC%A0%91%EC%A7%88%EB%AC%B8-Delegate%EB%8A%94-retain%EC%9D%B4-%EB%90%A0%EA%B9%8C)
-<br>
-<br>
-
-## NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
-<br>
-
-    어떤 객체가 NotificationCenter에 이벤트롤 발생시키면, NotificationCenter에 등록된 옵저버는 그 이벤트에 대한 알림을 받아서 행동하는 방식입니다. 그래서 어떤 이벤트가 발생하면 다른 객체에서 그 시점에 맞춰서 뭔가 해야할 때 사용이 되고 NotificationCenter에 여러 옵저버를 등록할 수 있어서 동시에 여러 객체에게 전달할 때 사용이 됩니다.
-
-- [블로그](https://jcsoohwancho.github.io/2019-08-23-NotificationCenter-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0/)
-
-<br>
-<br>
-
-## UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
+## App thinning에 대해서 설명하시오.
 <br>
 
     메인 쓰레드.
