@@ -146,7 +146,7 @@
     2. NSOperationQueue 사용하면 GCD Queue보다 많은 코드를 필요로 해서 불편하다.
     3. NSOperationQueue 종속성에 대한 개념이 있다.
     
-    - [스택오버플로우](https://stackoverflow.com/questions/10373331/nsoperation-vs-grand-central-dispatch)
+- [스택오버플로우](https://stackoverflow.com/questions/10373331/nsoperation-vs-grand-central-dispatch)
 <br>
 
 ## GCD API 동작 방식과 필요성에 대해 설명하시오.
@@ -158,5 +158,5 @@
     필요성 
     웹에서 이미지를 다운 받아서 사용자에게 보여준다고 했을 때, 비동기로 처리하지 않는다면 이미지를 다운받는 동안 다른 작업을 할 수 없기 때문에 앱이 멈춘다. 이렇게 비용이 많이 들어가는 작업을 메인 스레드에서 진행하면 사용자가 다른 작업을 할 수 없기 때문에 필요하다고 생각한다.
     
-    - [깃허브](https://github.com/jwonyLee/TIL/blob/master/iOS/Interview/GCD-API.md)
+- [깃허브](https://github.com/jwonyLee/TIL/blob/master/iOS/Interview/GCD-API.md)
 <br>
