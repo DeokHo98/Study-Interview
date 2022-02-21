@@ -34,94 +34,129 @@
 ## App thinning에 대해서 설명하시오.
 <br>
 
-    메인 쓰레드.
-    왜 메인쓰레드에서 처리해야 하나? UIKit은 앱이 실행이 되면 UIApplication 인스턴스화 되는데, 이 인스턴스는 메인 쓰레드에 붙어 있기 때문입니다. 그래서 이미지뷰, 버튼 이런것들도 UIView 이고 UIView는 UIApplication의 자식이기 때문에 (한마디로 애플이 그렇게 만들어서🤬)
+    애플리케이션이 디바이스에 설치될 때, 앱 스토어와 운영체제가 디바이스의 특성에 맞게 설치되도록 하는 설치 최적화 기술
     
 - [블로그](https://zeddios.tistory.com/519)
-<br>
-<br>
-
-## App Bundle의 구조와 역할에 대해 설명하시오.
+- [블로그2](https://ttuk-ttak.tistory.com/42)
 <br>
 
-    코드와 리소스를 폴더에 저장하는 것
-
-- [블로그](https://sihyungyou.github.io/iOS-app-bundle/)
-<br>
+## 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?
 <br>
 
-## 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
+    UIApplication, Delegate
+
+- [블로그](https://zeddios.tistory.com/539)
+- [공식문서](https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain)
 <br>
 
-    상위 객체는 UIResponder. 이벤트에 응답하고 처리하는 역할을 하는데 여기서 이벤트는 터치, 모션, 원격제어 등을 말한다. 만약 UIResponder가 이벤트를 처리하지 않는다면 처리할 수 있는 Responder가 나올 때 까지 연쇄적으로 다음 Responder에게 넘긴다.
-
-- [UIViewController 상위 객체 확인](https://developer.apple.com/documentation/uikit/uiviewcontroller)
-- [UIResponder](https://developer.apple.com/documentation/uikit/uiresponder)
-- [UIResponder에 대해 자세히 다루는 블로그](https://jcsoohwancho.github.io/2019-07-25-Responder%EC%99%80-Responder-Chain,-%EA%B7%B8%EB%A6%AC%EA%B3%A0-First-Responder/)
-
-<br>
+## @Main에 대해서 설명하시오.
 <br>
 
-## 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
+    앱은 프레임 워크의 기본 실행 시작점을 시작하기 위해 소량의 "부팅 로딩" 코드가 필요하다. 스위프트의 타입 기반의 시스템을 사용하여(@main) 간편한 진입점을 제공하여 문제를 해결한다.
+
+- [블로그](https://barosalki.tistory.com/entry/iOS-Swift-53-main-type%EA%B8%B0%EB%B0%98%EC%9D%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%A7%84%EC%9E%85%EC%A0%90)
 <br>
 
-    xib 파일 생성해서 스토리보드처럼 사용하거나, 코드로 클래스에서 UIView를 상속받아 사용
-
-<br>
+## 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
 <br>
 
-## View 객체에 대해 설명하시오.
+    foreground
+    저전력 모드에서 앱이 애니메이션 사용을 줄이고 프레임 속도를 낮추고 위치 업데이트를 중지하고 동기화 및 백업을 비활성화 하는 등의 작업을 할 수 있다.
+    
+    background
+    1. 사용자의 이벤트를 못 받음
+    2. 시간 제약이 있음
+    3. 특정 유형의 앱만 돌릴 수 있음
+    4. 메모리 제한도 있음(OS가 알아서 조정함)
+    
+- [블로그](https://icksw.tistory.com/178)
 <br>
 
-    View는 앱에서 컨텐츠롤 보여주는 기본적인 요소이고 세 가지 역할이 있는데 첫번째는 내용을 보여주는 것이고 두번째는 터치 이벤트를 처리 세번째는 자신한테 포함된 서브뷰 관리입니다.
-
-<br>
+## 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
 <br>
 
-## UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
+    //애플리케이션이 실행된 직후 사용자의 화면에 보여지기 직전에 호출 
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    
+    //애플리케이션이 최초 실행될 때 호출되는 메소드
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool
+
+    //애플리케이션이 InActive 상태로 전환되기 직전에 호출  task 일시정지, 타이머 비활성화, 일시정지(게임)
+    func applicationWillResignActive(_ application: UIApplication)    
+
+    //애플리케이션이 백그라운드 상태로 전환된 직후 호출
+    func applicationDidEnterBackground(_ application: UIApplication)    
+
+    //애플리케이션이 Active 상태가 되기 직전, 화면에 보여지기 직전에 호출 
+    func applicationWillEnterForeground(_ application: UIApplication)    
+
+    //애플리케이션이 Active 상태로 전환된 직후 호출
+    func applicationDidBecomeActive(_ application: UIApplication)
+
+    //애플리케이션이 종료되기 직전에 호출 
+    func applicationWillTerminate(_ application: UIApplication)    
+
+- [블로그](https://medium.com/ios-development-with-swift/%EC%95%B1-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-app-lifecycle-vs-%EB%B7%B0-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-view-lifecycle-in-ios-336ae00d1855)
 <br>
 
-    뷰를 그리기 위해 사용되는 인스턴스 변수 입니다. 뷰는 직접 컨텐츠나 애니메이션을 그리지 않고 layer에게 위임합니다. 그림자효과나 테두리 같은 시각적 효과를 layer가 맡아서 일을 합니다.
-
-- [블로그](https://babbab2.tistory.com/53)
-- [공식문서](https://developer.apple.com/documentation/uikit/uiview/1622436-layer)
-<br>
+## 앱이 In-Active 상태가 되는 시나리오를 설명하시오.
 <br>
 
-## UIWindow 객체의 역할은 무엇인가?
+    1. 사용자가 앱을 실행합니다.
+    2. 앱 실행 도중 홈 버튼을 누릅니다.
+    3. 앱을 다시 켭니다.
+    4. 앱이 백그라운드에 있다가 Suspended 상태로 전이됩니다.
+
+- [블로그](https://caution-dev.github.io/ios/2019/03/14/iOS-Application-state.html)
 <br>
 
-    시각적인 요소를 포함하지 않고, 화면에 표시되는 View의 컨테이너 역할을 하고 뷰한테 터치 이벤트를 전달하는 역할도 하는 객체입니다.
-
-- [블로그](https://woozzang.tistory.com/143)
-<br>
+## scene delegate에 대해 설명하시오.
 <br>
 
-## UINavigationController 의 역할이 무엇인지 설명하시오.
+    화면에 표시되는 내용(Windows 또는 Scenes)을 처리하고 앱이 표시되는 방식을 관리
+
+- [블로그](https://lena-chamna.netlify.app/post/appdelegate_and_scenedelegate/)
+- [블로그2](https://zeddios.tistory.com/811)
 <br>
 
-    내비게이션 컨트롤러의 역할은 사용자의 액션에 응답하여 뷰컨트롤러를 스택에 쌓거나 제거하는 역할은 한다. 스택구조여서 스택의 제일 하단에는 rootViewController가 있고 현재 보여지고 있는 뷰컨트롤러는 스택의 마지막에 위치한다.
-
-- [공식문서](https://developer.apple.com/documentation/uikit/uinavigationcontroller)
-- [블로그](https://ttuk-ttak.tistory.com/49)
-
-<br>
+## UIApplication 객체의 컨트롤러 역할은 어디에 구현해야 하는가?
 <br>
 
-## TableView를 동작 방식과 화면에 Cell을 출력하기 위해 최소한 구현해야 하는 DataSource 메서드를 설명하시오.
+    Application Delegate
+
+- [블로그](https://daheenallwhite.github.io/ios/2019/07/18/UIApplication-UIWindow/)
 <br>
 
-    numberOfRowsInSection, cellForRowAt 이 두가지 메서드가 테이블뷰 구현하기 위한 필수 메서드. numberOfRowsInSection 메서드는 하나의 섹션안에 몇개의 셀이 들어갈지 정하는 메서드이고, cellForRowAt은 셀안에 들어가는 데이터들을 어떻게 보여줄지 설정하는 메서드다.
-- [numberOfRowsInSection](https://developer.apple.com/documentation/uikit/uitableviewdatasource/1614931-tableview)
-- [cellForRowAt](https://developer.apple.com/documentation/uikit/uitableviewdatasource/1614861-tableview)
-
-<br>
+## App의 Not running, Inactive, Active, Background, Suspended에 대해 설명하시오.
 <br>
 
-## 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
+    1. Not Running : 앱이 아직 실행되지 않았거나, 완전히 종료되어 동작하지 않는 상태
+    2. Inactive : app이 실행중이지만 사용자로부터 event를 받을 수 없는 상태
+    3. Active : app이 실제 실행중이고 사용자 event를 받아서 상호작용할 수 있는 상태
+    4. Background : 홈화면으로 나가거나 다른 app으로 전환되어 현재 app이 실질적인 동작을 하지 않는 상태
+    5. Suspended : app을 다시 실행했을 때 최근 작업을 빠르게 로드하기 위해 메모리에 관련 데이터만 저장되어있는 상태
+
+- [블로그](https://velog.io/@rnfxl92/%EC%95%B1-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-Application-Life-Cycle)
 <br>
 
-    tag를 활용하거나, 테이블뷰 메서드안에서 조건문으로 테이블뷰 구별해서 구현이 가능합니다.
-
+## NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
 <br>
+
+    1. NSOperationQueue 사용할 때 상당한 오버 헤드가 있다.
+    2. NSOperationQueue 사용하면 GCD Queue보다 많은 코드를 필요로 해서 불편하다.
+    3. NSOperationQueue 종속성에 대한 개념이 있다.
+    
+    - [스택오버플로우](https://stackoverflow.com/questions/10373331/nsoperation-vs-grand-central-dispatch)
+<br>
+
+## GCD API 동작 방식과 필요성에 대해 설명하시오.
+<br>
+
+    동작 방식 
+    해야 할 일(코드)을 Operation으로 Wrapping한 다음에, Queue에 넣는다. Queue에서 남는 스레드에 작업을 배분한다.
+
+    필요성 
+    웹에서 이미지를 다운 받아서 사용자에게 보여준다고 했을 때, 비동기로 처리하지 않는다면 이미지를 다운받는 동안 다른 작업을 할 수 없기 때문에 앱이 멈춘다. 이렇게 비용이 많이 들어가는 작업을 메인 스레드에서 진행하면 사용자가 다른 작업을 할 수 없기 때문에 필요하다고 생각한다.
+    
+    - [깃허브](https://github.com/jwonyLee/TIL/blob/master/iOS/Interview/GCD-API.md)
 <br>
