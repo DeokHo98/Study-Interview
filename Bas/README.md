@@ -1,10 +1,110 @@
+## 멀티 쓰레드로 동작하는 앱을 작성하고 싶을 때 고려할 수 있는 방식들을 설명하시오.
+<br>
+
+    실행 순서의 동기화
+    메모리 접근에 대한 동기화
+
+- [깃허브](https://github.com/WeareSoft/tech-interview/blob/master/contents/os.md#%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8C%80%EC%8B%A0-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+- [블로그 - Thread-unsafe](https://greatleee.github.io/what_is_the_thread_safety/)
+<br>
+
+## MVC 구조에 대해 블록 그림을 그리고, 각 역할과 흐름을 설명하시오.
+<br>
+
+![이미지](https://user-images.githubusercontent.com/67938946/155874942-e61e2410-4dd1-4a3a-a487-c90e91ca1b66.png)
+
+![이미지](https://user-images.githubusercontent.com/67938946/155869266-49d246da-462e-4260-8904-5c1e3500cdd5.png)
+
+- [블로그](http://labs.brandi.co.kr/2018/02/21/kimjh.html)
+<br>
+
+## 프로토콜이란 무엇인지 설명하시오.
+<br>
+
+    채택하면 구현해야 함!
+    예시) 요일, 자격증
+
+<br>
+
+## Protocol Oriented Programming과 Object Oriented Programming의 차이점을 설명하시오.
+<br>
+
+    객체지향 -> 상속 ! 
+    프로토콜 지향 -> 합성 !
+
+- [블로그](https://blog.burt.pe.kr/posts/protocol-oriented-programming/)
+<br>
+
+## Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오.
+<br>
+
+    Hashable : hashValue 라는 정수형 프로퍼티를 가지는 타입 -> 인스턴스를 식별하기 위해서 -> Dictionary 의 키 값, set에 들어가는 값은 Hashable 해야 한다!
+    Equatable : 값이 같은지 비교할 수 있는 타입
+    
+- [블로그](https://m.blog.naver.com/taerg89/222017140972)
+<br>
+
+## mutating 키워드에 대해 설명하시오.
+<br>
+
+    구조체 메소드에서 구조체 프로퍼티 수정할 때 mutating 키워드 사용!
+
+<br>
+
+## 탈출 클로저에 대하여 설명하시오.
+<br>
+
+    내부에서 사용한 클로저를 외부 변수에 저장 -> 다른 곳에서 사용 가능!
+
+<br>
+
+## - Extension에 대해 설명하시오.
+<br>
+
+    기존 타입에 기능(메서드)을 추가하여 사용하는 것
+
+<br>
+
+## Extension 내부에서 함수를 override할 수 있는지 설명하시오.
+<br>
+
+    @objc 붙이면 가능!
+
+<br>
+
+## 접근 제어자의 종류엔 어떤게 있는지 설명하시오.
+<br>
+
+    open, public, internal, fileprivate, private
+
+- [블로그](https://lsh424.tistory.com/40)
+<br>
+
+## defer가 호출되는 순서는 어떻게 되고, defer가 호출되지 않는 경우를 설명하시오.
+<br>
+
+    등록한 역순으로 실행
+    defer 문이 호출되기 전에 return 되는 경우 
+
+<br>
+
+## property wrapper에 대해서 설명하시오.
+<br>
+
+    코드를 라이브러리로 만들어 사용할 수 있게 함으로 컴파일러의 변경을 최소화하면서 더 많은 매커니즘을 재사용할 수 있도록 만들어 주는 것
+
+- [블로그](https://zeddios.tistory.com/1221)
+- [블로그2](https://jcsoohwancho.github.io/2019-10-21-Property-Wrapper%EB%9E%80/
+)
+<br>
+
 ## bound와 frame 의 차이점을 설명하시오
 <br>
 
     상위뷰 의지한다 ? → 바운드
     자기만의 아이덴티티가 있다 ?  → 프레임
 
-- [블로그1](https://zeddios.tistory.com/203)
+- [블로그](https://zeddios.tistory.com/203)
 <br>
 
 ## 실제 디바이스가 없을 경우 개발 환경에서 할 수 있는 것과 없는 것을 설명하시오.
