@@ -11,7 +11,7 @@
 ## MVC 구조에 대해 블록 그림을 그리고, 각 역할과 흐름을 설명하시오.
 <br>
 
-![이미지](https://user-images.githubusercontent.com/67938946/154877256-6b20ca74-dda6-4d74-87be-07e6c1af6eef.png)
+![이미지](https://user-images.githubusercontent.com/67938946/155874942-e61e2410-4dd1-4a3a-a487-c90e91ca1b66.png)
 
 ![이미지](https://user-images.githubusercontent.com/67938946/155869266-49d246da-462e-4260-8904-5c1e3500cdd5.png)
 
