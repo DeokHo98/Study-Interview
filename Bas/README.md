@@ -1,3 +1,32 @@
+## 멀티 쓰레드로 동작하는 앱을 작성하고 싶을 때 고려할 수 있는 방식들을 설명하시오.
+<br>
+
+    실행 순서의 동기화
+    메모리 접근에 대한 동기화
+
+- [깃허브](https://github.com/WeareSoft/tech-interview/blob/master/contents/os.md#%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8C%80%EC%8B%A0-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+- [블로그 - Thread-unsafe](https://greatleee.github.io/what_is_the_thread_safety/)
+<br>
+
+## MVC 구조에 대해 블록 그림을 그리고, 각 역할과 흐름을 설명하시오.
+<br>
+
+![이미지](https://user-images.githubusercontent.com/67938946/155868865-b91879ad-72aa-475a-adc5-ffb3b88bbf6c.png){: width="300" height="300"}
+
+
+- [블로그1](https://zeddios.tistory.com/203)
+<br>
+
+## 프로토콜이란 무엇인지 설명하시오.
+<br>
+
+    상위뷰 의지한다 ? → 바운드
+    자기만의 아이덴티티가 있다 ?  → 프레임
+
+- [블로그1](https://zeddios.tistory.com/203)
+<br>
+
+
 ## bound와 frame 의 차이점을 설명하시오
 <br>
 
