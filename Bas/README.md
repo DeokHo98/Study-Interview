@@ -11,21 +11,92 @@
 ## MVC 구조에 대해 블록 그림을 그리고, 각 역할과 흐름을 설명하시오.
 <br>
 
-![이미지](https://user-images.githubusercontent.com/67938946/155868865-b91879ad-72aa-475a-adc5-ffb3b88bbf6c.png){: width="300" height="300"}
+![이미지](https://user-images.githubusercontent.com/67938946/154877256-6b20ca74-dda6-4d74-87be-07e6c1af6eef.png)
 
+![이미지](https://user-images.githubusercontent.com/67938946/155869266-49d246da-462e-4260-8904-5c1e3500cdd5.png)
 
-- [블로그1](https://zeddios.tistory.com/203)
+- [블로그](http://labs.brandi.co.kr/2018/02/21/kimjh.html)
 <br>
 
 ## 프로토콜이란 무엇인지 설명하시오.
 <br>
 
-    상위뷰 의지한다 ? → 바운드
-    자기만의 아이덴티티가 있다 ?  → 프레임
+    채택하면 구현해야 함!
+    예시) 요일, 자격증
 
-- [블로그1](https://zeddios.tistory.com/203)
 <br>
 
+## Protocol Oriented Programming과 Object Oriented Programming의 차이점을 설명하시오.
+<br>
+
+    객체지향 -> 상속 ! 
+    프로토콜 지향 -> 합성 !
+
+- [블로그](https://blog.burt.pe.kr/posts/protocol-oriented-programming/)
+<br>
+
+## Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오.
+<br>
+
+    Hashable : hashValue 라는 정수형 프로퍼티를 가지는 타입 -> 인스턴스를 식별하기 위해서 -> Dictionary 의 키 값, set에 들어가는 값은 Hashable 해야 한다!
+    Equatable : 값이 같은지 비교할 수 있는 타입
+    
+- [블로그](https://m.blog.naver.com/taerg89/222017140972)
+<br>
+
+## mutating 키워드에 대해 설명하시오.
+<br>
+
+    구조체 메소드에서 구조체 프로퍼티 수정할 때 mutating 키워드 사용!
+
+<br>
+
+## 탈출 클로저에 대하여 설명하시오.
+<br>
+
+    내부에서 사용한 클로저를 외부 변수에 저장 -> 다른 곳에서 사용 가능!
+
+<br>
+
+## - Extension에 대해 설명하시오.
+<br>
+
+    기존 타입에 기능(메서드)을 추가하여 사용하는 것
+
+<br>
+
+## Extension 내부에서 함수를 override할 수 있는지 설명하시오.
+<br>
+
+    @objc 붙이면 가능!
+
+<br>
+
+## 접근 제어자의 종류엔 어떤게 있는지 설명하시오.
+<br>
+
+    open, public, internal, fileprivate, private
+
+- [블로그](https://lsh424.tistory.com/40)
+<br>
+
+## defer가 호출되는 순서는 어떻게 되고, defer가 호출되지 않는 경우를 설명하시오.
+<br>
+
+    등록한 역순으로 실행
+    defer 문이 호출되기 전에 return 되는 경우 
+
+<br>
+
+## property wrapper에 대해서 설명하시오.
+<br>
+
+    코드를 라이브러리로 만들어 사용할 수 있게 함으로 컴파일러의 변경을 최소화하면서 더 많은 매커니즘을 재사용할 수 있도록 만들어 주는 것
+
+- [블로그](https://zeddios.tistory.com/1221)
+- [블로그2](https://jcsoohwancho.github.io/2019-10-21-Property-Wrapper%EB%9E%80/
+)
+<br>
 
 ## bound와 frame 의 차이점을 설명하시오
 <br>
@@ -33,7 +104,7 @@
     상위뷰 의지한다 ? → 바운드
     자기만의 아이덴티티가 있다 ?  → 프레임
 
-- [블로그1](https://zeddios.tistory.com/203)
+- [블로그](https://zeddios.tistory.com/203)
 <br>
 
 ## 실제 디바이스가 없을 경우 개발 환경에서 할 수 있는 것과 없는 것을 설명하시오.
